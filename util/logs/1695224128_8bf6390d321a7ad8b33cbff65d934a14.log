@@ -1,0 +1,16 @@
+Exception in thread "main" java.lang.IllegalStateException: java.nio.file.NoSuchFileException: /usr/lib/jvm/java-11-openjdk-amd64/jmods
+	at com.ibm.wala.util.PlatformUtil.getBootClassPathJars(PlatformUtil.java:66)
+	at com.ibm.wala.properties.WalaProperties.getJ2SEJarFiles(WalaProperties.java:69)
+	at slice.MyECJJavaSourceAnalysisEngine.addSystemDependencies(MyECJJavaSourceAnalysisEngine.java:70)
+	at slice.SliceFromStatement.sliceFromSource(SliceFromStatement.java:45)
+	at slice.SliceFromStatement.sliceSPLSystem(SliceFromStatement.java:35)
+	at slice.SliceMain.main(SliceMain.java:5)
+Caused by: java.nio.file.NoSuchFileException: /usr/lib/jvm/java-11-openjdk-amd64/jmods
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newDirectoryStream(UnixFileSystemProvider.java:432)
+	at java.base/java.nio.file.Files.newDirectoryStream(Files.java:472)
+	at java.base/java.nio.file.Files.list(Files.java:3699)
+	at com.ibm.wala.util.PlatformUtil.getBootClassPathJars(PlatformUtil.java:62)
+	... 5 more
