@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # VARCOP
 
 ### Ranking buggy SPL system
@@ -26,3 +27,7 @@ The meaning of arguments are as following:
 1. The full version of data, you can download [here](https://tuanngokien.github.io/splc2021/)
 2. For the sake of simplification, you can download [this](https://drive.google.com/drive/folders/19TrAf14FSdIkCVEQLjFGxlkkFcPSVR9Z?usp=sharing) light version, in which each case contains only spectrum files, files contain suspicious statements identified by VarCop and the slice-based method.
 
+=======
+# CRFL
+Source code and experimental results of CRFL
+>>>>>>> 0950ed3884bd906a3c43aec99460481d58444352
