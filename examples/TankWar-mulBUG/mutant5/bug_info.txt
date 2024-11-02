@@ -1,0 +1,2 @@
+M_240.Maler.5 GAME_WIDTH=240 -> GAME_WIDTH=-240
+explodieren.ExplodierenEffekt.19 this.y_Koordinate = y_koordinate -> this.y_Koordinate = x_koordinate

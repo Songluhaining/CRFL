@@ -1,0 +1,40 @@
+{
+	"features" : [
+		"BankAccount",
+		"Overdraft",
+		"CreditWorthiness",
+		"Lock",
+		"Transaction"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		},
+		"credit": {
+			"CreditWorthiness": "credit"
+		},
+		"lock": {
+			"Lock": "lock",
+			"Transaction": "lock"
+		},
+		"unLock": {
+			"Lock": "unLock"
+		},
+		"isLocked": {
+			"Lock": "isLocked"
+		},
+		"transfer": {
+			"Transaction": "transfer"
+		}
+	}
+
+}

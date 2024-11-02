@@ -1,0 +1,2 @@
+base.com.sleepycat.je.dbi.DbEnvState.30 status == validPrevStates[i] -> validPrevStates[i++]
+Derivative_LoggingFiner_LoggingBase.com.sleepycat.je.dbi.CursorImpl.6 logger.isLoggable(level) -> !logger.isLoggable(level)

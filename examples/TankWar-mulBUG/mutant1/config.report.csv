@@ -1,0 +1,27 @@
+Product\Feature,TankWar,PC,Handy,Beschleunigung,einfrieren,Bombe,Energie,Feuerkraft,Mars,explodieren,M_240,M_600,M_780,fuer_PC,fuer_Handy,IMG_tool,Re_fuer_PC,Re_fuer_Handy,Sound_fuer_pc,Sound_fuer_Handy,EN,DE,USA_M1Abrams,Germany_Leopard,China_Type99,Easy,Hard,__TEST_OUTPUT__
+model_m_ca4_0001,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0002,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0003,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0004,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  F  ,__FAILED__
+model_m_ca4_0005,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0006,  T  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,__PASSED__
+model_m_ca4_0007,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0008,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0009,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0010,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  T  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0011,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  T  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0012,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,__PASSED__
+model_m_ca4_0013,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0014,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,__PASSED__
+model_m_ca4_0015,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  T  ,  F  ,__PASSED__
+model_m_ca4_0016,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0017,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  T  ,  T  ,  T  ,  F  ,__FAILED__
+model_m_ca4_0018,  T  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0019,  T  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,__FAILED__
+model_m_ca4_0020,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  F  ,  T  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0021,  T  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0022,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0023,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  F  ,__PASSED__
+model_m_ca4_0024,  T  ,  T  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0025,  T  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  T  ,__PASSED__
+model_m_ca4_0026,  T  ,  T  ,  F  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  T  ,  T  ,  F  ,  F  ,  T  ,  F  ,  F  ,  F  ,  F  ,  T  ,  F  ,  T  ,  F  ,  F  ,  T  ,  T  ,  T  ,  F  ,__PASSED__

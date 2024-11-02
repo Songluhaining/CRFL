@@ -110,10 +110,8 @@ def write_result_to_file(row, sheet, ranking_results, fb_results, search_spaces,
 
 
 def suspicious_isolation(mutated_project_dir, filtering_coverage_rate, coverage_version, mutated_project_name):
-    a,spc_time, total_counter, each_jie_spc_number, switches_rate_list, saved_counter_list = SPCsManager.find_SPCs(mutated_project_dir, filtering_coverage_rate, mutated_project_name)
-    # spc_log_file_path = get_spc_log_file_path(mutated_project_dir, filtering_coverage_rate)
-    # SlicingManager.do_slice(spc_log_file_path, filtering_coverage_rate, coverage_version)
-    return spc_time, total_counter, each_jie_spc_number, switches_rate_list, saved_counter_list
+    spc_log_file_path = get_spc_log_file_path(mutated_project_dir, filtering_coverage_rate)
+    SlicingManager.do_slice(spc_log_file_path, filtering_coverage_rate, coverage_version)
 
 
 def get_suspicious_space(mutated_project_dir, filtering_coverage_rate, coverage_version):
@@ -160,7 +158,7 @@ def multiple_bugs_ranking(system_name, buggy_systems_folder, sbfl_metrics, alpha
         sheet = []
         row = 0
         experiment_file_name = join_path(aggregation_result_dir,
-                                        system_name + "_ranking_result_3Bug_Dis.xlsx")
+                                        system_name + "_ranking_result.xlsx")
 
         wb = Workbook(experiment_file_name)
 
@@ -169,26 +167,14 @@ def multiple_bugs_ranking(system_name, buggy_systems_folder, sbfl_metrics, alpha
             write_header_in_result_file(row, sheet[i])
         row += 1
         num_of_bugs = 0
-        run_time = 0
-        each_bug_times_df = []
-        exm2_switches_rate_df = []
-        exm2_saved_rate_df = []
         for mutated_project_name in mutated_projects:
-
             start_time = time.time()
             num_of_bugs += 1
             mutated_project_dir = join_path(buggy_systems_folder, mutated_project_name)
-            each_project_start_time = time.time()
-            spc_time, total_counter, each_jie_spc_number, switches_rate, saved_counter_rate = suspicious_isolation(mutated_project_dir, filtering_coverage_rate, coverage_version, mutated_project_name)   #核心1
-            # each_bug_times_df.append(each_jie_spc_number)
-            exm2_switches_rate_df.append(switches_rate)
-            exm2_saved_rate_df.append(saved_counter_rate)
-            # print("filtering_coverage_rate为:", filtering_coverage_rate, coverage_version, mutated_project_dir)
+            suspicious_isolation(mutated_project_dir, filtering_coverage_rate, coverage_version, mutated_project_name)
             search_spaces = get_suspicious_space(mutated_project_dir, filtering_coverage_rate, coverage_version)
-            buggy_statements = get_multiple_buggy_statements(mutated_project_name, mutated_project_dir)  #读取mutant.log文件得到异常语句
-
+            buggy_statements = get_multiple_buggy_statements(mutated_project_name, mutated_project_dir)
             row_temp = row
-
             if system_name == "ZipMe":
                 is_a_var_bug = is_var_bug_by_config(mutated_project_dir, ["Base", "Compress"])
             else:
@@ -201,15 +187,11 @@ def multiple_bugs_ranking(system_name, buggy_systems_folder, sbfl_metrics, alpha
                                                                          aggregation,
                                                                          normalization,
                                                                          coverage_version,
-                                                                         filtering_coverage_rate, alpha)   #返回所有bug的位置和运行时间
+                                                                         filtering_coverage_rate, alpha)
 
-        #     run_time = run_time + each_project_end_time
             fb_ranking_results = features_ranking_multiple_bugs(buggy_statements, mutated_project_dir,
                                                                 search_spaces,
                                                                 filtering_coverage_rate, sbfl_metrics)
-            each_project_end_time = time.time() - each_project_start_time
-            print("each_BUG_project_time:", each_project_end_time)
-            each_bug_times_df.append(each_project_end_time)
 
             for metric in range(0, len(sbfl_metrics)):
                 sheet[metric].write(row_temp, BUG_ID_COL, mutated_project_name)
@@ -217,22 +199,9 @@ def multiple_bugs_ranking(system_name, buggy_systems_folder, sbfl_metrics, alpha
                                            ranking_results[sbfl_metrics[metric]],
                                            fb_ranking_results[sbfl_metrics[metric]], search_spaces,
                                            is_a_var_bug)
-            total_time = time.time()-start_time
-            print("spc_time rate: ", spc_time/total_time)
         wb.close()
-        print("run_time: ", run_time)
-        arr_spcTime = np.array(each_bug_times_df)
-        df_spcTime = pd.DataFrame(arr_spcTime)
-        df_spcTime.to_csv('/home/whn/codes/work2/VARCOP-gh-pages/run_time/RunTime_FVBFL_ZipMe_1BUG-new.csv')
-        # df = pd.DataFrame(arr, columns=['1Jie', '2Jie', '3Jie', '4Jie', '5Jie', '6Jie', '7Jie'])
-        # df.to_csv('/home/whn/codes/work2/VARCOP-gh-pages/spc_counter/spcNumber_ExamDB_1BUG.csv')
+        print("The results of statement-level fault localization at: " + experiment_file_name)
 
-        # arr = np.array(exm2_switches_rate_df)
-        # arr2 = np.array(exm2_saved_rate_df)
-        # df = pd.DataFrame(arr)
-        # df2 = pd.DataFrame(arr2)
-        # df.to_csv('/home/whn/codes/work2/VARCOP-gh-pages/spc_counter/switches_rate_ExamDB_1BUG.csv')
-        # df2.to_csv('/home/whn/codes/work2/VARCOP-gh-pages/spc_counter/saved_rate_ExamDB_1BUG.csv')
 
 def write_runtime_to_file(system_result_dir, run_time, file_name):
     experiment_file_name = join_path(system_result_dir,

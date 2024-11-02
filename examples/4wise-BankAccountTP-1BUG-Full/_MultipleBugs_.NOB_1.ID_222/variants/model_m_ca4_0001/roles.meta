@@ -1,0 +1,20 @@
+{
+	"features" : [
+		"BankAccount"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		}
+	}
+
+}

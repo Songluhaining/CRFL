@@ -1,0 +1,2 @@
+fuer_PC.Maler.8 temp != null -> temp == null
+Image.Wall.5 i++ -> i--

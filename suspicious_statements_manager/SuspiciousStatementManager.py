@@ -9,18 +9,16 @@ from util.FileManager import join_path, get_slicing_log_file_path, get_variants_
     get_slicing_test_case_output_file_path
 
 
-def get_suspicious_statement_varcop(mutated_project_dir, postfix):         #postfix = filtering_coverage_rate = 0.1
+def get_suspicious_statement_varcop(mutated_project_dir, postfix):
     slicing_info_file_path = get_slicing_log_file_path(mutated_project_dir, postfix)
-    failing_coverage_data = read_coverage_file(mutated_project_dir)   #data = {} ('featureClass') + "." + line.get('featureLineNum')
-    print("ddddd: ", isfile(slicing_info_file_path), slicing_info_file_path)
+    failing_coverage_data = read_coverage_file(mutated_project_dir)
     if isfile(slicing_info_file_path):
-        slicing_info_file = open(slicing_info_file_path, "r")     #slicing_info_file_path = slicing_{}.log"
+        slicing_info_file = open(slicing_info_file_path, "r")
         slicing_info_content = slicing_info_file.readline()
 
         suspicious_stms_list = json.loads(slicing_info_content)
         slicing_info_file.close()
         for key in suspicious_stms_list:
-            print("这里的key是: ", key)
             suspicious_temp = []
             for stm in suspicious_stms_list[key].keys():
                 if stm not in failing_coverage_data[key]:

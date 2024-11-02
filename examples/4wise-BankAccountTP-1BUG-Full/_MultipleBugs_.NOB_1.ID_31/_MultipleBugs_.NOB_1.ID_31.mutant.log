@@ -1,0 +1,1 @@
+Transaction.Transaction.ODL_6:19:boolean_transfer(Account,Account,int):amount * -1 => -1

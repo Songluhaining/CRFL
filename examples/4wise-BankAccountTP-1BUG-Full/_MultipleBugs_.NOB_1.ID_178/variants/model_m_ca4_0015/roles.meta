@@ -1,0 +1,26 @@
+{
+	"features" : [
+		"BankAccount",
+		"Interest"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay__wrappee__BankAccount",
+			"Interest": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear__wrappee__BankAccount",
+			"Interest": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		},
+		"calculateInterest": {
+			"Interest": "calculateInterest"
+		}
+	}
+
+}

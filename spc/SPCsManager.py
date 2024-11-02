@@ -5,7 +5,7 @@ from itertools import combinations
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
-from FP_Growth import get_result
+
 from methods.mutual_information import su_calculation
 from util.FileManager import get_model_configs_report_path, get_variants_dir, join_path, get_src_dir, get_spc_log_file_path, \
     get_file_name_with_parent, is_path_exist
@@ -15,19 +15,19 @@ from util.TestingCoverageManager import statement_coverage_of_variants
 logger = get_logger(__name__)
 
 
-def find_SPCs(mutated_project_dir, filtering_coverage_rate, mutated_project_name):      #SPCs = Suspicious Partial Configurations
+def find_SPCs(mutated_project_dir, filtering_coverage_rate):      #SPCs = Suspicious Partial Configurations
     start_time = time.time()
     spc_log_file_path = get_spc_log_file_path(mutated_project_dir, filtering_coverage_rate)   #spc_{}.log
     if is_path_exist(spc_log_file_path):
         logger.info(f"Used Old SPC log file [{spc_log_file_path}]")
         return spc_log_file_path, 0
 
-    config_report_path = get_model_configs_report_path(mutated_project_dir)    #config.report.csv
-    variants_dir = get_variants_dir(mutated_project_dir)      #子variants文件夹
-    variants_testing_coverage = statement_coverage_of_variants(mutated_project_dir)   #被测试变异项目的覆盖率，返回的为一个数组
+    config_report_path = get_model_configs_report_path(mutated_project_dir)
+    variants_dir = get_variants_dir(mutated_project_dir)
+    variants_testing_coverage = statement_coverage_of_variants(mutated_project_dir)
     feature_names, variant_names, passed_configs, failed_configs = load_configs(config_report_path,
                                                                                 variants_testing_coverage,
-                                                                                filtering_coverage_rate)   #读取config.report.csv
+                                                                                filtering_coverage_rate)
     df = pd.read_csv(config_report_path)
     df_data = df.iloc[:, 1:]
     columns = df_data.columns
@@ -47,11 +47,11 @@ def find_SPCs(mutated_project_dir, filtering_coverage_rate, mutated_project_name
             C_relevance_dict.add(f"{i}_{True}")
             C_relevance_dict.add(f"{i}_{False}")
 
-    spc_log_file_path, total_counter, each_jie_spc_number, switches_rate_list, saved_counter_list = detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, variants_dir,
+    spc_log_file_path, total_counter, nway_spc_number, inclusion_rate, duplication_rate = detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, variants_dir,
                                     spc_log_file_path, C_relevance_dict, df)
     #logging.info("[Runtime] SPC runtime %s: %s", mutated_project_dir, time.time() - start_time)
     spc_runtime = time.time() - start_time
-    return spc_log_file_path, spc_runtime, total_counter, each_jie_spc_number, switches_rate_list, saved_counter_list
+    return spc_log_file_path, spc_runtime, total_counter, nway_spc_number, inclusion_rate, duplication_rate
 
 
 def remove_subsets(input_list):
@@ -85,7 +85,8 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
     Cache_set = set()
     saved_counter=0
     total_counter=0
-    switches_rate = 0
+    inclusion_rate = 0
+    fl = len(feature_names)
     if (len(passed_configs) == 0 or len(failed_configs) == 0):
         spc_file = open(spc_log_file_path, "w")
         spc_file.close()
@@ -94,8 +95,6 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
         logger.info(f"Finding SPCs and write to [{get_file_name_with_parent(spc_log_file_path)}]")
         with open(spc_log_file_path, "w+") as spc_log_file:
             # Core Algorithm
-            print("failed_configs: " + str(failed_configs))
-
             for current_failed_config in failed_configs:
                 switches = []
                 current_failed_config_name = variant_names[tuple(current_failed_config)]
@@ -106,44 +105,44 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
                 avg_dis = 0
                 for current_passed_config in passed_configs:
                     current_passed_config_name = variant_names[tuple(current_passed_config)]
-
                     position_current_passed_config = df.loc[df['Product\Feature'] == current_passed_config_name]
                     position_current_passed_config = position_current_passed_config.iloc[0, 2:].tolist()
-
                     Y = np.array(position_current_passed_config)
-
-
                     X_with_each_failed_config_dis[tuple(current_passed_config)] = eucliDist(X, Y)
                     avg_dis += X_with_each_failed_config_dis[tuple(current_passed_config)]
-                    # cluster_current_passed_config = \
-                    # df.loc[df['Product\Feature'] == current_passed_config_name, 'cluster'].tolist()[0]
                 X_with_each_failed_config_dis = sorted(X_with_each_failed_config_dis.items(), key=lambda x: x[1])
                 X_with_each_failed_config_dis = dict(X_with_each_failed_config_dis)
                 avg_dis= round(avg_dis/len(X_with_each_failed_config_dis), 5)
-                print("distrance:", X_with_each_failed_config_dis)
                 for current_passed_config in X_with_each_failed_config_dis:
-                    if X_with_each_failed_config_dis[current_passed_config] < avg_dis:  #BankAccountTP 2.0 Email 2.0 Elevator 2.0  ExamDB2.5  GPL 2.5
+                    if X_with_each_failed_config_dis[current_passed_config] < avg_dis:
                         current_switch = find_switched_feature_selections(current_failed_config,
                                                                           current_passed_config)
                         switches.append(current_switch)
+
                 if len(switches) > 0:
                     switches = minimize_switches(switches)
                     switched_feature_selections = union_all_switched_feature_selections(switches)  # 各个switch的特征交集
                     switches_list.append(switched_feature_selections)
+                else:
+                    for current_passed_config in passed_configs:
+                        current_switch = find_switched_feature_selections(current_failed_config,
+                                                                          current_passed_config)
+                        switches.append(current_switch)
+                    if len(switches) > 0:
+                        switches = minimize_switches(switches)
+                        switched_feature_selections = union_all_switched_feature_selections(
+                            switches)
+                        switches_list.append(switched_feature_selections)
             cached_spc = []
-            print("switches: " + str(len(switches_list)))
             old_switches = switches_list
             switches_list = remove_subsets(switches_list)
-            print("new switches: " + str(len(switches_list)))
-            print("switches reduction rate: ", (len(old_switches) - len(switches_list)) / len(old_switches))
-            switches_rate = float((len(old_switches) - len(switches_list)) / len(old_switches))
-            each_jie_spc_number = []
+            inclusion_rate = float((len(old_switches) - len(switches_list)) / len(old_switches))
+            nway_spc_number = []
             for k in range(1, 8):
                 inner_start = time.time()
                 spc_number = 0
                 for i, switched_feature_selected in enumerate(switches_list):
 
-                    # 要用的
                     kth_set = set(combinations(switched_feature_selected, k))
                     for item in kth_set:
                         current_SPC = set(item)
@@ -152,18 +151,13 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
                             saved_counter += 1
                             continue
                         if tuple(current_SPC) in Cache_set:
-                            # print("bingo!")
                             saved_counter += 1
                             continue
                         spc_number += 1
-                        # print("Cache_set length of before: ",len(Cache_set))
                         Cache_set.add(tuple(current_SPC))
-                        # print("Cache_set length of after: ",len(Cache_set))
                         if satisfy_spc_minimality(current_SPC, SPC_set) and satisfy_spc_necessity(current_SPC,
                                                                                                   passed_configs,
                                                                                                   failed_configs):
-                            # print("Cache_set length: ",len(Cache_set))
-                            print("the", i, "th current_SPC: ", current_SPC)
                             combined_spc = combine_spc_with_feature_names(feature_names, current_SPC)
                             if combined_spc.strip() and combined_spc not in cached_spc:
                                 # minimized_failed_config = find_minimized_failed_config_contains_spc(current_SPC,
@@ -175,24 +169,15 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
                                         f"{combined_spc}; {get_src_dir(join_path(variants_dir, variant_names[tuple(spc_config)]))}\n")
                                 cached_spc.append(combined_spc)
                             SPC_set.append(current_SPC)
-                each_jie_spc_number.append(spc_number)
-                # 要用的
-            saved_counter_rate = 0
+                nway_spc_number.append(spc_number)
             if total_counter > 0:
-                # inner_end = time.time() - inner_start
-                # print("total time for ", i, "th failed config: ", inner_end)
-                # print("num of current total SPC: ", len(SPC_set))
-                # print("save_counter: ", saved_counter, "total_counter", total_counter, "save rate: ",
-                #       saved_counter / total_counter)
-                saved_counter_rate = (float(saved_counter / total_counter))
+                duplication_rate = (float(saved_counter / total_counter))
             else:
-                saved_counter_rate = 0
+                duplication_rate = 0
                 Cache_set = set()
-
-
-            with open("/home/whn/codes/VARCOP-gh-pages/SPC_set.txt", 'a') as file:
-                file.write(str(SPC_set)+'\n')
-            return spc_log_file_path, (total_counter - saved_counter), each_jie_spc_number, switches_rate, saved_counter_rate
+            # with open("/home/whn/codes/VARCOP-gh-pages/SPC_set.txt", 'a') as file:
+            #     file.write(str(SPC_set)+'\n')
+            return spc_log_file_path, (total_counter - saved_counter), nway_spc_number, inclusion_rate, duplication_rate
             # end
 
 
@@ -335,6 +320,5 @@ def load_configs(config_report_path, variants_testing_coverage, filtering_covera
             else:
                 failed_configs.append(current_config)
                 variant_names[tuple(current_config)] = current_variant_name
-        print("feature_names, variant_names, passed_configs, failed_configs:  ", feature_names, variant_names, passed_configs, failed_configs)
         return feature_names, variant_names, passed_configs, failed_configs
 

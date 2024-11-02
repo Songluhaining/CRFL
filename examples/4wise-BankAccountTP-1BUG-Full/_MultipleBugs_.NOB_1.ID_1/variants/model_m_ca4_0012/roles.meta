@@ -1,0 +1,31 @@
+{
+	"features" : [
+		"BankAccount",
+		"Overdraft",
+		"Lock"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		},
+		"lock": {
+			"Lock": "lock"
+		},
+		"unLock": {
+			"Lock": "unLock"
+		},
+		"isLocked": {
+			"Lock": "isLocked"
+		}
+	}
+
+}

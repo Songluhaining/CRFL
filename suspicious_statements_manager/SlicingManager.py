@@ -20,7 +20,6 @@ def do_slice(spc_file_path, filtering_coverage_rate, coverage_version):
     else:
         post_fix = filtering_coverage_rate
     slicing_output_path = get_slicing_log_file_path(get_outer_dir(spc_file_path), post_fix)
-    print("pppp:", slicing_output_path)
     if is_path_exist(slicing_output_path):
         logger.info(f"Used Old Slicing log file [{slicing_output_path}]")
         return slicing_output_path, 0
@@ -29,7 +28,6 @@ def do_slice(spc_file_path, filtering_coverage_rate, coverage_version):
     output_log = execute_shell_command(
         f'java -Xmx256m -Dspc_path={spc_file_path} -Dslicing_output_path={slicing_output_path} -Dcoverage_file_name={failed_coverage_file_name} -jar {PLUGIN_PATH} ',
         extra_args=[], log_to_file=True)
-    print("aaaaaaaazenmbanaaaaaa: ", output_log)
     logger.info(f"Wrote suspicious_statements_manager output to file [{get_file_name_with_parent(slicing_output_path)}]")
     logging.info("[Runtime] suspicious_statements_manager %s: %s", slicing_output_path, time.time() - start_time)
     slicing_runtime = time.time() - start_time

@@ -1,0 +1,3 @@
+Re_fuer_PC.Maler.65 option.equals(Sprach.Name) -> !option.equals(Sprach.Name)
+Re_fuer_PC.Note.9 name.length() >= 7 -> name.length() > 7
+Tools.Tool.21 time += elapsedTime -> time -= elapsedTime

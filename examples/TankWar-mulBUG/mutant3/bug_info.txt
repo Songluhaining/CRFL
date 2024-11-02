@@ -1,0 +1,2 @@
+M_600.Maler.5 GAME_WIDTH=600 -> GAME_WIDTH=-600
+Re_fuer_PC.Maler.28 menu == null -> menu != null

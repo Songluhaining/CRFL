@@ -1,0 +1,45 @@
+{
+	"features" : [
+		"BankAccount",
+		"Interest",
+		"InterestEstimation",
+		"Lock",
+		"Transaction"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay__wrappee__BankAccount",
+			"Interest": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear__wrappee__BankAccount",
+			"Interest": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		},
+		"calculateInterest": {
+			"Interest": "calculateInterest"
+		},
+		"estimatedInterest": {
+			"InterestEstimation": "estimatedInterest"
+		},
+		"lock": {
+			"Lock": "lock",
+			"Transaction": "lock"
+		},
+		"unLock": {
+			"Lock": "unLock"
+		},
+		"isLocked": {
+			"Lock": "isLocked"
+		},
+		"transfer": {
+			"Transaction": "transfer"
+		}
+	}
+
+}

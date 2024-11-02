@@ -1,0 +1,3 @@
+Image.Missile.7 ankManager.status == GameManager.PAUSE || tankManager.status == GameManager.EXIT -> ankManager.status == GameManager.PAUSE && tankManager.status == GameManager.EXIT
+fuer_PC.Maler.347 a -> ++a
+Sound_fuer_pc.SoundPlayer.10 instance == null -> instance != null

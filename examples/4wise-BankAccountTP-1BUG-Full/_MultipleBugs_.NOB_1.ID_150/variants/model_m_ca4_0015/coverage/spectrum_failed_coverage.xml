@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613409362492" clover="4.4.1">
+ <tests count="2">
+  <test source="main.Account_ESTest.test0.coverage.xml" />
+  <test source="main.Account_ESTest.test5.coverage.xml" />
+ </tests> 
+ <project timestamp="1613409362388">  
+  <package name="main">  
+   <file path="Application.java" name="Application">   
+    <line num="10" count="0" type="method" featureClass="BankAccount.Application" featureLineNum="5" /> 
+    <line num="16" count="0" type="method" featureClass="Interest.Application" featureLineNum="4" /> 
+    <line num="17" count="0" type="stmt" featureClass="Interest.Application" featureLineNum="5" /> 
+    <line num="18" count="0" type="stmt" featureClass="Interest.Application" featureLineNum="6" /> 
+    <line num="24" count="0" type="method" featureClass="BankAccount.Application" featureLineNum="8" /> 
+    <line num="30" count="0" type="method" featureClass="Interest.Application" featureLineNum="9" /> 
+    <line num="31" count="0" type="stmt" featureClass="Interest.Application" featureLineNum="10" /> 
+    <line num="32" count="0" type="stmt" featureClass="Interest.Application" featureLineNum="11" /> 
+    <line num="33" count="0" type="stmt" featureClass="Interest.Application" featureLineNum="12" /> 
+   </file> 
+   <file path="Account.java" name="Account">   
+    <line num="15" count="2" type="method" featureClass="BankAccount.Account" featureLineNum="14" /> 
+    <line num="22" count="1" type="method" featureClass="BankAccount.Account" featureLineNum="18" /> 
+    <line num="24" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="20" /> 
+    <line num="25" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="21" />  
+    <line num="26" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="22" /> 
+    <line num="28" count="0" type="stmt" featureClass="BankAccount.Account" featureLineNum="24" /> 
+    <line num="29" count="0" type="stmt" featureClass="BankAccount.Account" featureLineNum="25" /> 
+    <line num="35" count="2" type="method" featureClass="BankAccount.Account" featureLineNum="28" /> 
+    <line num="37" count="2" type="stmt" featureClass="BankAccount.Account" featureLineNum="30" buggy="true" /> 
+    <line num="38" count="2" type="stmt" featureClass="BankAccount.Account" featureLineNum="31" />  
+    <line num="39" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="32" /> 
+    <line num="41" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="34" /> 
+    <line num="42" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="35" /> 
+    <line num="57" count="0" type="method" featureClass="Interest.Account" featureLineNum="9" /> 
+    <line num="58" count="0" type="stmt" featureClass="Interest.Account" featureLineNum="10" /> 
+   </file> 
+  </package> 
+ </project> 
+ <testproject timestamp="1613409362388">  
+ </testproject> 
+</coverage>

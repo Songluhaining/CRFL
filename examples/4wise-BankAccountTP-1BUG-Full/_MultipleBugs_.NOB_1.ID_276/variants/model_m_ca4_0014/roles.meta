@@ -1,0 +1,24 @@
+{
+	"features" : [
+		"BankAccount",
+		"DailyLimit"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay__wrappee__BankAccount",
+			"DailyLimit": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update__wrappee__BankAccount",
+			"DailyLimit": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate__wrappee__BankAccount",
+			"DailyLimit": "undoUpdate"
+		}
+	}
+
+}

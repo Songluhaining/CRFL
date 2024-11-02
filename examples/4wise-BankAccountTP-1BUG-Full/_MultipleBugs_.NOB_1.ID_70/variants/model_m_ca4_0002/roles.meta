@@ -1,0 +1,44 @@
+{
+	"features" : [
+		"BankAccount",
+		"DailyLimit",
+		"Overdraft",
+		"CreditWorthiness",
+		"Lock",
+		"Transaction"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay__wrappee__BankAccount",
+			"DailyLimit": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update__wrappee__BankAccount",
+			"DailyLimit": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate__wrappee__BankAccount",
+			"DailyLimit": "undoUpdate"
+		},
+		"credit": {
+			"CreditWorthiness": "credit"
+		},
+		"lock": {
+			"Lock": "lock",
+			"Transaction": "lock"
+		},
+		"unLock": {
+			"Lock": "unLock"
+		},
+		"isLocked": {
+			"Lock": "isLocked"
+		},
+		"transfer": {
+			"Transaction": "transfer"
+		}
+	}
+
+}

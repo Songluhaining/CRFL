@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613408481643" clover="4.4.1">
+   <project timestamp="1613408481527">
+      <metrics coveredelements="7" complexity="18" loc="128" methods="10" classes="3" statements="33" packages="1" coveredconditionals="1" coveredmethods="2" elements="59" ncloc="73" files="3" conditionals="16" coveredstatements="4"/>
+      <package name="main">
+         <metrics coveredelements="7" complexity="18" loc="128" methods="10" classes="3" statements="33" coveredconditionals="1" coveredmethods="2" elements="59" ncloc="73" files="3" conditionals="16" coveredstatements="4"/>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_120/variants/model_m_ca4_0033/src/Application.java" name="Application.java">
+            <metrics coveredelements="0" coveredconditionals="0" complexity="2" loc="19" coveredmethods="0" methods="2" elements="2" classes="1" ncloc="8" statements="0" conditionals="0" coveredstatements="0"/>
+            <class name="Application">
+               <metrics coveredelements="0" coveredconditionals="0" complexity="2" coveredmethods="0" methods="2" elements="2" statements="0" conditionals="0" coveredstatements="0"/>
+            </class>
+            <line complexity="1" visibility="package" signature="nextDay() : void" num="9" count="0" type="method"/>
+            <line complexity="1" visibility="package" signature="nextYear() : void" num="15" count="0" type="method"/>
+         </file>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_120/variants/model_m_ca4_0033/src/Account.java" name="Account.java">
+            <metrics coveredelements="7" coveredconditionals="1" complexity="8" loc="71" coveredmethods="2" methods="6" elements="23" classes="1" ncloc="36" statements="13" conditionals="4" coveredstatements="4"/>
+            <class name="Account">
+               <metrics coveredelements="7" coveredconditionals="1" complexity="8" coveredmethods="2" methods="6" elements="23" statements="13" conditionals="4" coveredstatements="4"/>
+            </class>
+            <line complexity="1" visibility="package" signature="Account()" num="15" count="1" type="method"/>
+            <line complexity="2" visibility="package" signature="update(int) : boolean" num="22" count="0" type="method"/>
+            <line num="24" count="0" type="stmt"/>
+            <line num="25" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="25" type="cond"/>
+            <line num="26" count="0" type="stmt"/>
+            <line num="28" count="0" type="stmt"/>
+            <line num="29" count="0" type="stmt"/>
+            <line complexity="2" visibility="package" signature="undoUpdate(int) : boolean" num="35" count="1" type="method"/>
+            <line num="37" count="1" type="stmt"/>
+            <line num="38" count="1" type="stmt"/>
+            <line falsecount="1" truecount="0" num="38" type="cond"/>
+            <line num="39" count="0" type="stmt"/>
+            <line num="41" count="1" type="stmt"/>
+            <line num="42" count="1" type="stmt"/>
+            <line complexity="1" visibility="package" signature="lock() : void" num="52" count="0" type="method"/>
+            <line num="53" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="unLock() : void" num="59" count="0" type="method"/>
+            <line num="60" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="isLocked() : boolean" num="66" count="0" type="method"/>
+            <line num="67" count="0" type="stmt"/>
+         </file>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_120/variants/model_m_ca4_0033/src/Transaction.java" name="Transaction.java">
+            <metrics coveredelements="0" coveredconditionals="0" complexity="8" loc="38" coveredmethods="0" methods="2" elements="34" classes="1" ncloc="29" statements="20" conditionals="12" coveredstatements="0"/>
+            <class name="Transaction">
+               <metrics coveredelements="0" coveredconditionals="0" complexity="8" coveredmethods="0" methods="2" elements="34" statements="20" conditionals="12" coveredstatements="0"/>
+            </class>
+            <line complexity="5" visibility="public" signature="transfer(Account,Account,int) : boolean" num="6" count="0" type="method"/>
+            <line num="7" count="0" type="stmt"/>
+            <line num="7" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="7" type="cond"/>
+            <line num="8" count="0" type="stmt"/>
+            <line num="9" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="9" type="cond"/>
+            <line num="10" count="0" type="stmt"/>
+            <line num="12" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="12" type="cond"/>
+            <line num="13" count="0" type="stmt"/>
+            <line num="15" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="15" type="cond"/>
+            <line num="16" count="0" type="stmt"/>
+            <line num="17" count="0" type="stmt"/>
+            <line num="19" count="0" type="stmt"/>
+            <line num="21" count="0" type="stmt"/>
+            <line num="22" count="0" type="stmt"/>
+            <line complexity="3" visibility="private" signature="lock(Account,Account) : boolean" num="29" count="0" type="method"/>
+            <line num="30" count="0" type="stmt"/>
+            <line num="30" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="30" type="cond"/>
+            <line num="31" count="0" type="stmt"/>
+            <line num="31" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="31" type="cond"/>
+            <line num="32" count="0" type="stmt"/>
+            <line num="33" count="0" type="stmt"/>
+            <line num="34" count="0" type="stmt"/>
+         </file>
+      </package>
+   </project>
+   <testproject timestamp="1613408481527">
+      <metrics coveredelements="0" complexity="0" loc="0" methods="0" classes="0" statements="0" packages="0" coveredconditionals="0" coveredmethods="0" elements="0" ncloc="0" files="0" conditionals="0" coveredstatements="0"/>
+   </testproject>
+</coverage>

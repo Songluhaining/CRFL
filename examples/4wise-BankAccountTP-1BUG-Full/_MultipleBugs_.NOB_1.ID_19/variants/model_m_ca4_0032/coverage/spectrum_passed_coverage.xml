@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613405294799" clover="4.4.1">
+ <tests count="20">
+  <test source="main.Account_ESTest.test09.coverage.xml" />
+  <test source="main.Application_ESTest.test2.coverage.xml" />
+  <test source="main.Transaction_ESTest.test1.coverage.xml" />
+  <test source="main.Transaction_ESTest.test6.coverage.xml" />
+  <test source="main.Transaction_ESTest.test3.coverage.xml" />
+  <test source="main.Account_ESTest.test10.coverage.xml" />
+  <test source="main.Transaction_ESTest.test0.coverage.xml" />
+  <test source="main.Account_ESTest.test05.coverage.xml" />
+  <test source="main.Account_ESTest.test06.coverage.xml" />
+  <test source="main.Account_ESTest.test00.coverage.xml" />
+  <test source="main.Account_ESTest.test01.coverage.xml" />
+  <test source="main.Transaction_ESTest.test5.coverage.xml" />
+  <test source="main.Account_ESTest.test08.coverage.xml" />
+  <test source="main.Account_ESTest.test07.coverage.xml" />
+  <test source="main.Account_ESTest.test04.coverage.xml" />
+  <test source="main.Application_ESTest.test1.coverage.xml" />
+  <test source="main.Application_ESTest.test0.coverage.xml" />
+  <test source="main.Account_ESTest.test03.coverage.xml" />
+  <test source="main.Account_ESTest.test02.coverage.xml" />
+  <test source="main.Transaction_ESTest.test2.coverage.xml" />
+ </tests> 
+ <project timestamp="1613405294697">  
+  <package name="main">  
+   <file path="Account.java" name="Account">   
+    <line num="14" count="20" type="method" featureClass="BankAccount.Account" featureLineNum="7" /> 
+    <line num="20" count="4" type="method" featureClass="BankAccount.Account" featureLineNum="10" /> 
+    <line num="21" count="4" type="stmt" featureClass="BankAccount.Account" featureLineNum="11" /> 
+    <line num="22" count="4" type="stmt" featureClass="BankAccount.Account" featureLineNum="12" />  
+    <line num="23" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="13" /> 
+    <line num="24" count="3" type="stmt" featureClass="BankAccount.Account" featureLineNum="14" /> 
+    <line num="25" count="3" type="stmt" featureClass="BankAccount.Account" featureLineNum="15" /> 
+    <line num="31" count="3" type="method" featureClass="BankAccount.Account" featureLineNum="18" /> 
+    <line num="32" count="3" type="stmt" featureClass="BankAccount.Account" featureLineNum="19" /> 
+    <line num="33" count="3" type="stmt" featureClass="BankAccount.Account" featureLineNum="20" />  
+    <line num="34" count="1" type="stmt" featureClass="BankAccount.Account" featureLineNum="21" /> 
+    <line num="35" count="2" type="stmt" featureClass="BankAccount.Account" featureLineNum="22" /> 
+    <line num="36" count="2" type="stmt" featureClass="BankAccount.Account" featureLineNum="23" /> 
+    <line num="51" count="4" type="method" featureClass="Interest.Account" featureLineNum="9" /> 
+    <line num="52" count="4" type="stmt" featureClass="Interest.Account" featureLineNum="10" /> 
+    <line num="62" count="6" type="method" featureClass="Lock.Account" featureLineNum="7" /> 
+    <line num="63" count="6" type="stmt" featureClass="Lock.Account" featureLineNum="8" /> 
+    <line num="69" count="4" type="method" featureClass="Lock.Account" featureLineNum="11" /> 
+    <line num="70" count="4" type="stmt" featureClass="Lock.Account" featureLineNum="12" /> 
+    <line num="76" count="7" type="method" featureClass="Lock.Account" featureLineNum="15" /> 
+    <line num="77" count="7" type="stmt" featureClass="Lock.Account" featureLineNum="16" /> 
+   </file> 
+   <file path="Application.java" name="Application">   
+    <line num="10" count="2" type="method" featureClass="BankAccount.Application" featureLineNum="5" /> 
+    <line num="16" count="2" type="method" featureClass="Interest.Application" featureLineNum="4" /> 
+    <line num="17" count="2" type="stmt" featureClass="Interest.Application" featureLineNum="5" /> 
+    <line num="18" count="2" type="stmt" featureClass="Interest.Application" featureLineNum="6" /> 
+    <line num="24" count="2" type="method" featureClass="BankAccount.Application" featureLineNum="8" /> 
+    <line num="30" count="2" type="method" featureClass="Interest.Application" featureLineNum="9" /> 
+    <line num="31" count="2" type="stmt" featureClass="Interest.Application" featureLineNum="10" /> 
+    <line num="32" count="2" type="stmt" featureClass="Interest.Application" featureLineNum="11" /> 
+    <line num="33" count="1" type="stmt" featureClass="Interest.Application" featureLineNum="12" /> 
+   </file> 
+   <file path="Transaction.java" name="Transaction">   
+    <line num="11" count="6" type="method" featureClass="Transaction.Transaction" featureLineNum="10" /> 
+    <line num="13" count="6" type="stmt" featureClass="Transaction.Transaction" featureLineNum="12" />  
+    <line num="14" count="2" type="stmt" featureClass="Transaction.Transaction" featureLineNum="13" /> 
+    <line num="16" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="15" /> 
+    <line num="17" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="16" />  
+    <line num="18" count="2" type="stmt" featureClass="Transaction.Transaction" featureLineNum="17" /> 
+    <line num="20" count="1" type="stmt" featureClass="Transaction.Transaction" featureLineNum="19" buggy="true" />  
+    <line num="21" count="1" type="stmt" featureClass="Transaction.Transaction" featureLineNum="20" /> 
+    <line num="23" count="0" type="stmt" featureClass="Transaction.Transaction" featureLineNum="22" />  
+    <line num="24" count="0" type="stmt" featureClass="Transaction.Transaction" featureLineNum="23" /> 
+    <line num="25" count="0" type="stmt" featureClass="Transaction.Transaction" featureLineNum="24" /> 
+    <line num="27" count="0" type="stmt" featureClass="Transaction.Transaction" featureLineNum="26" /> 
+    <line num="30" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="29" /> 
+    <line num="31" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="30" /> 
+    <line num="38" count="6" type="method" featureClass="Transaction.Transaction" featureLineNum="34" /> 
+    <line num="40" count="6" type="stmt" featureClass="Transaction.Transaction" featureLineNum="36" />  
+    <line num="41" count="1" type="stmt" featureClass="Transaction.Transaction" featureLineNum="37" /> 
+    <line num="43" count="4" type="stmt" featureClass="Transaction.Transaction" featureLineNum="39" />  
+    <line num="44" count="1" type="stmt" featureClass="Transaction.Transaction" featureLineNum="40" /> 
+    <line num="46" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="42" /> 
+    <line num="47" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="43" /> 
+    <line num="48" count="3" type="stmt" featureClass="Transaction.Transaction" featureLineNum="44" /> 
+   </file> 
+  </package> 
+ </project> 
+ <testproject timestamp="1613405294697">  
+ </testproject> 
+</coverage>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613412016823" clover="4.4.1">
+   <project timestamp="1613412016722">
+      <metrics coveredelements="12" complexity="13" loc="118" methods="11" classes="2" statements="19" packages="1" coveredconditionals="0" coveredmethods="6" elements="34" ncloc="54" files="2" conditionals="4" coveredstatements="6"/>
+      <package name="main">
+         <metrics coveredelements="12" complexity="13" loc="118" methods="11" classes="2" statements="19" coveredconditionals="0" coveredmethods="6" elements="34" ncloc="54" files="2" conditionals="4" coveredstatements="6"/>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_176/variants/model_m_ca4_0018/src/Account.java" name="Account.java">
+            <metrics coveredelements="3" coveredconditionals="0" complexity="9" loc="81" coveredmethods="2" methods="7" elements="25" classes="1" ncloc="36" statements="14" conditionals="4" coveredstatements="1"/>
+            <class name="Account">
+               <metrics coveredelements="3" coveredconditionals="0" complexity="9" coveredmethods="2" methods="7" elements="25" statements="14" conditionals="4" coveredstatements="1"/>
+            </class>
+            <line complexity="1" visibility="package" signature="Account()" num="14" count="1" type="method"/>
+            <line complexity="2" visibility="package" signature="update(int) : boolean" num="20" count="0" type="method"/>
+            <line num="21" count="0" type="stmt"/>
+            <line num="22" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="22" type="cond"/>
+            <line num="23" count="0" type="stmt"/>
+            <line num="24" count="0" type="stmt"/>
+            <line num="25" count="0" type="stmt"/>
+            <line complexity="2" visibility="package" signature="undoUpdate(int) : boolean" num="31" count="0" type="method"/>
+            <line num="32" count="0" type="stmt"/>
+            <line num="33" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="33" type="cond"/>
+            <line num="34" count="0" type="stmt"/>
+            <line num="35" count="0" type="stmt"/>
+            <line num="36" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="calculateInterest() : int" num="51" count="1" type="method"/>
+            <line num="52" count="1" type="stmt"/>
+            <line complexity="1" visibility="package" signature="lock() : void" num="62" count="0" type="method"/>
+            <line num="63" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="unLock() : void" num="69" count="0" type="method"/>
+            <line num="70" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="isLocked() : boolean" num="76" count="0" type="method"/>
+            <line num="77" count="0" type="stmt"/>
+         </file>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_176/variants/model_m_ca4_0018/src/Application.java" name="Application.java">
+            <metrics coveredelements="9" coveredconditionals="0" complexity="4" loc="37" coveredmethods="4" methods="4" elements="9" classes="1" ncloc="18" statements="5" conditionals="0" coveredstatements="5"/>
+            <class name="Application">
+               <metrics coveredelements="9" coveredconditionals="0" complexity="4" coveredmethods="4" methods="4" elements="9" statements="5" conditionals="0" coveredstatements="5"/>
+            </class>
+            <line complexity="1" visibility="private" signature="nextDay__wrappee__BankAccount() : void" num="10" count="1" type="method"/>
+            <line complexity="1" visibility="package" signature="nextDay() : void" num="16" count="1" type="method"/>
+            <line num="17" count="1" type="stmt"/>
+            <line num="18" count="1" type="stmt"/>
+            <line complexity="1" visibility="private" signature="nextYear__wrappee__BankAccount() : void" num="24" count="1" type="method"/>
+            <line complexity="1" visibility="package" signature="nextYear() : void" num="30" count="1" type="method"/>
+            <line num="31" count="1" type="stmt"/>
+            <line num="32" count="1" type="stmt"/>
+            <line num="33" count="1" type="stmt"/>
+         </file>
+      </package>
+   </project>
+   <testproject timestamp="1613412016722">
+      <metrics coveredelements="0" complexity="0" loc="0" methods="0" classes="0" statements="0" packages="0" coveredconditionals="0" coveredmethods="0" elements="0" ncloc="0" files="0" conditionals="0" coveredstatements="0"/>
+   </testproject>
+</coverage>

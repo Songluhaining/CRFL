@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1613408220785" clover="4.4.1">
+   <project timestamp="1613408220675">
+      <metrics coveredelements="3" complexity="20" loc="150" methods="12" classes="2" statements="34" packages="1" coveredconditionals="0" coveredmethods="2" elements="62" ncloc="78" files="2" conditionals="16" coveredstatements="1"/>
+      <package name="main">
+         <metrics coveredelements="3" complexity="20" loc="150" methods="12" classes="2" statements="34" coveredconditionals="0" coveredmethods="2" elements="62" ncloc="78" files="2" conditionals="16" coveredstatements="1"/>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_120/variants/model_m_ca4_0019/src/Application.java" name="Application.java">
+            <metrics coveredelements="0" coveredconditionals="0" complexity="3" loc="29" coveredmethods="0" methods="3" elements="5" classes="1" ncloc="13" statements="2" conditionals="0" coveredstatements="0"/>
+            <class name="Application">
+               <metrics coveredelements="0" coveredconditionals="0" complexity="3" coveredmethods="0" methods="3" elements="5" statements="2" conditionals="0" coveredstatements="0"/>
+            </class>
+            <line complexity="1" visibility="private" signature="nextDay__wrappee__BankAccount() : void" num="10" count="0" type="method"/>
+            <line complexity="1" visibility="package" signature="nextDay() : void" num="17" count="0" type="method"/>
+            <line num="18" count="0" type="stmt"/>
+            <line num="19" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="nextYear() : void" num="25" count="0" type="method"/>
+         </file>
+         <file path="/home/hieuvd/spl_dataset_generation/InputPreparation/new_projects/4wise-BankAccountTP/mutated_projects/_MultipleBugs_.NOB_1.ID_120/variants/model_m_ca4_0019/src/Account.java" name="Account.java">
+            <metrics coveredelements="3" coveredconditionals="0" complexity="17" loc="121" coveredmethods="2" methods="9" elements="57" classes="1" ncloc="65" statements="32" conditionals="16" coveredstatements="1"/>
+            <class name="Account">
+               <metrics coveredelements="3" coveredconditionals="0" complexity="17" coveredmethods="2" methods="9" elements="57" statements="32" conditionals="16" coveredstatements="1"/>
+            </class>
+            <line complexity="1" visibility="package" signature="Account()" num="15" count="1" type="method"/>
+            <line complexity="2" visibility="private" signature="update__wrappee__BankAccount(int) : boolean" num="22" count="0" type="method"/>
+            <line num="24" count="0" type="stmt"/>
+            <line num="25" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="25" type="cond"/>
+            <line num="26" count="0" type="stmt"/>
+            <line num="28" count="0" type="stmt"/>
+            <line num="29" count="0" type="stmt"/>
+            <line complexity="4" visibility="package" signature="update(int) : boolean" num="36" count="0" type="method"/>
+            <line num="37" count="0" type="stmt"/>
+            <line num="38" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="38" type="cond"/>
+            <line num="39" count="0" type="stmt"/>
+            <line num="40" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="40" type="cond"/>
+            <line num="41" count="0" type="stmt"/>
+            <line num="43" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="43" type="cond"/>
+            <line num="44" count="0" type="stmt"/>
+            <line num="45" count="0" type="stmt"/>
+            <line num="46" count="0" type="stmt"/>
+            <line complexity="2" visibility="private" signature="undoUpdate__wrappee__BankAccount(int) : boolean" num="52" count="0" type="method"/>
+            <line num="54" count="0" type="stmt"/>
+            <line num="55" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="55" type="cond"/>
+            <line num="56" count="0" type="stmt"/>
+            <line num="58" count="0" type="stmt"/>
+            <line num="59" count="0" type="stmt"/>
+            <line complexity="4" visibility="package" signature="undoUpdate(int) : boolean" num="66" count="0" type="method"/>
+            <line num="67" count="0" type="stmt"/>
+            <line num="68" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="68" type="cond"/>
+            <line num="69" count="0" type="stmt"/>
+            <line num="70" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="70" type="cond"/>
+            <line num="71" count="0" type="stmt"/>
+            <line num="73" count="0" type="stmt"/>
+            <line falsecount="0" truecount="0" num="73" type="cond"/>
+            <line num="74" count="0" type="stmt"/>
+            <line num="75" count="0" type="stmt"/>
+            <line num="76" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="credit(int) : boolean" num="91" count="0" type="method"/>
+            <line num="92" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="lock() : void" num="102" count="0" type="method"/>
+            <line num="103" count="0" type="stmt"/>
+            <line complexity="1" visibility="package" signature="unLock() : void" num="109" count="1" type="method"/>
+            <line num="110" count="1" type="stmt"/>
+            <line complexity="1" visibility="package" signature="isLocked() : boolean" num="116" count="0" type="method"/>
+            <line num="117" count="0" type="stmt"/>
+         </file>
+      </package>
+   </project>
+   <testproject timestamp="1613408220675">
+      <metrics coveredelements="0" complexity="0" loc="0" methods="0" classes="0" statements="0" packages="0" coveredconditionals="0" coveredmethods="0" elements="0" ncloc="0" files="0" conditionals="0" coveredstatements="0"/>
+   </testproject>
+</coverage>

@@ -1,0 +1,2 @@
+base.com.sleepycat.je.SecondaryDatabase.100 status == OperationStatus.NOTFOUND -> status != OperationStatus.NOTFOUND
+Evictor.com.sleepycat.je.evictor.Evictor.134 scanIter.hasNext() -> !scanIter.hasNext()

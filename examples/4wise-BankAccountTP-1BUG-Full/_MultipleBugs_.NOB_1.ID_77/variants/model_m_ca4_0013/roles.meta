@@ -1,0 +1,24 @@
+{
+	"features" : [
+		"BankAccount",
+		"CreditWorthiness"
+	],
+	"roles": {
+		"nextDay": {
+			"BankAccount": "nextDay"
+		},
+		"nextYear": {
+			"BankAccount": "nextYear"
+		},
+		"update": {
+			"BankAccount": "update"
+		},
+		"undoUpdate": {
+			"BankAccount": "undoUpdate"
+		},
+		"credit": {
+			"CreditWorthiness": "credit"
+		}
+	}
+
+}
