@@ -14,6 +14,7 @@ After preparing the data, set the system_name and buggy_systems_folder parameter
 
 ```sh
 python ObtainSusFeatureInteractions.py --RQ1 --RQ3 --system "BankAccountTP" --buggy_systems_folder "./examples/4-wise-BankAccountTP-1BUG-Full"
+```
 
 The meaning of arguments are as following:
 1. **system**: For example Email, GPL, or BerkeleyDB, etc
