@@ -13,7 +13,7 @@ We evaluate the performance of CRFL and the baselines using eight software produ
 After preparing the data, set the system_name and buggy_systems_folder parameters in ObtainSusFeatureInteractions.py to execute the script directly. You can run it using the command line, for example:
 
 ```sh
-python ObtainSusFeatureInteractions.py --RQ1 --RQ3 --system "BankAccountTP" --buggy_systems_folder "./examples/4-wise-BankAccountTP-1BUG-Full"
+python ObtainSusFeatureInteractions.py --RQ1 --RQ3 --system "BankAccountTP" --buggy_systems_folder "./examples/4wise-BankAccountTP-1BUG-Full"
 ```
 
 The meaning of arguments are as following:
