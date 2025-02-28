@@ -15,7 +15,7 @@ from util.TestingCoverageManager import statement_coverage_of_variants
 logger = get_logger(__name__)
 
 
-def find_SPCs(mutated_project_dir, filtering_coverage_rate):      #SPCs = Suspicious Partial Configurations
+def find_SPCs(system, mutated_project_dir, filtering_coverage_rate):      #SPCs = Suspicious Partial Configurations
     start_time = time.time()
     spc_log_file_path = get_spc_log_file_path(mutated_project_dir, filtering_coverage_rate)   #spc_{}.log
     if is_path_exist(spc_log_file_path):
@@ -47,7 +47,7 @@ def find_SPCs(mutated_project_dir, filtering_coverage_rate):      #SPCs = Suspic
             C_relevance_dict.add(f"{i}_{True}")
             C_relevance_dict.add(f"{i}_{False}")
 
-    spc_log_file_path, total_counter, nway_spc_number, inclusion_rate, duplication_rate = detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, variants_dir,
+    spc_log_file_path, total_counter, nway_spc_number, inclusion_rate, duplication_rate = detect_SPCs(system, feature_names, passed_configs, failed_configs, variant_names, variants_dir,
                                     spc_log_file_path, C_relevance_dict, df)
     #logging.info("[Runtime] SPC runtime %s: %s", mutated_project_dir, time.time() - start_time)
     spc_runtime = time.time() - start_time
@@ -79,7 +79,7 @@ def remove_subsets(input_list):
 def eucliDist(A, B):
     return np.sqrt(sum(np.power((A - B), 2)))
 
-def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, variants_dir, spc_log_file_path, C_relevance_dict, df):
+def detect_SPCs(system, feature_names, passed_configs, failed_configs, variant_names, variants_dir, spc_log_file_path, C_relevance_dict, df):
     SPC_set = []
     switches_list = []
     Cache_set = set()
@@ -92,6 +92,7 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
         spc_file.close()
         return spc_log_file_path
     else:
+        experience_dis = {"Email": 2.0, "Elevator": 2.0, "ExamDB": 2.5, "GPL": 2.5}
         logger.info(f"Finding SPCs and write to [{get_file_name_with_parent(spc_log_file_path)}]")
         with open(spc_log_file_path, "w+") as spc_log_file:
             # Core Algorithm
@@ -112,11 +113,14 @@ def detect_SPCs(feature_names, passed_configs, failed_configs, variant_names, va
                     avg_dis += X_with_each_failed_config_dis[tuple(current_passed_config)]
                 X_with_each_failed_config_dis = sorted(X_with_each_failed_config_dis.items(), key=lambda x: x[1])
                 X_with_each_failed_config_dis = dict(X_with_each_failed_config_dis)
-                avg_dis= round(avg_dis/len(X_with_each_failed_config_dis), 5)
+                if system in experience_dis:
+                    avg_dis = experience_dis[system]
+                else:
+                    avg_dis= round(avg_dis/len(X_with_each_failed_config_dis), 5)
                 for current_passed_config in X_with_each_failed_config_dis:
                     if X_with_each_failed_config_dis[current_passed_config] < avg_dis:
                         current_switch = find_switched_feature_selections(current_failed_config,
-                                                                          current_passed_config)
+                                                                      current_passed_config)
                         switches.append(current_switch)
 
                 if len(switches) > 0:

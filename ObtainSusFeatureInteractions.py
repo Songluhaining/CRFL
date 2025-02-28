@@ -19,7 +19,7 @@ def run_RQ1_and_RQ2(system, buggy_systems_folder, mutated_projects):
     duplication_rate_df = []
     for mutated_project_name in mutated_projects:
         mutated_project_dir = join_path(buggy_systems_folder, mutated_project_name)
-        spc_log_file_path, spc_time, total_counter, nway_spc_number, inclusion_rate, duplication_rate = SPCsManager.find_SPCs( mutated_project_dir, 0.1)
+        spc_log_file_path, spc_time, total_counter, nway_spc_number, inclusion_rate, duplication_rate = SPCsManager.find_SPCs(system, mutated_project_dir, 0.1)
         runtime_df.append(spc_time)
         n_way_FI_df.append(nway_spc_number)
         inclusion_rate_df.append(inclusion_rate)
